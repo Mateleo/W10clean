@@ -1,8 +1,8 @@
 <div align="center">
   <img src="w10logo.svg" alt="W10 Logo" style="width: 100px; height: 100px;">
 </div>
-<h1 style="text-align: center;">W10Clean</h1>
-<p style="text-align: center;">This is a readme for myself and also for others that would like some scripts/commands to speed up and clean a W10 fresh install. From top to bottom it will go from general to more specific.</p>
+<h1 align="center">W10Clean</h1>
+<p align="center">This is a readme for myself and also for others that would like some scripts/commands to speed up and clean a W10 fresh install. From top to bottom it will go from general to more specific.</p>
 
 <hr>
 
