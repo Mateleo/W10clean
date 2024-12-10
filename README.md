@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div align="center">
   <img src="w10logo.svg" alt="W10 Logo" style="width: 100px; height: 100px;">
 </div>
 <h1 style="text-align: center;">W10Clean</h1>
