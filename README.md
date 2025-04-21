@@ -34,9 +34,15 @@ Get-AppxPackage | where-object {$_.name –notlike “*store*”} | Remove-AppxP
 
 
 
-## Install Apps 📲
+## Apps & Customization 🎨
+
+### Install Apps
 
 [Spinel](https://spinel.ovh)
+
+### Download wallpaper
+
+[W10 Wallpaper Dark Theme](/wp5493583-windows-10-default-wallpapers.jpg)
 
 
 
