@@ -81,5 +81,5 @@ choco install visualstudio2022buildtools --package-parameters "--add Microsoft.V
 ### [pnpm](https://pnpm.io/)
 
 ```bash
-npm install -g pnpm
+corepack enable pnpm
 ```
