@@ -1,84 +1,78 @@
 <div align="center">
-  <img src="w10logo.svg" alt="W10 Logo" style="width: 100px; height: 100px;">
+<img src="w10logo.svg" alt="W10 Logo" style="width: 100px; height: 100px;">
+<h1>W10Clean</h1>
+<p>A personal guide and repository of scripts to accelerate and optimize a fresh Windows 10 installation.</p>
 </div>
-<h1 align="center">W10Clean</h1>
-<p align="center">This is a readme for myself and also for others that would like some scripts/commands to speed up and clean a W10 fresh install. From top to bottom it will go from general to more specific.</p>
 
-<hr>
+## 🛠️ Initial Setup & System Prep
 
-> [!CAUTION]
-> Grayzone or redzone commands are flagged with 🏴‍☠️
+Before running scripts, you may need to allow local scripts to run on your system.
 
+### Set Execution Policy
 
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
 
-## W10 Clean Install 📦
+### Activate Windows (MAS) 🏴‍☠️
 
-### Activate Windows with MAS 🏴‍☠️
-
-```bash
+```powershell
 irm https://get.activated.win | iex
 ```
 
-_Choose (1) HWID for Windows activation._
+* **Step:** Choose option **(1) HWID** for permanent activation.
 
-### Clean OS
+## 🧹 System Debloat
 
-_Go for Standard_  
-[Privacy.sexy](https://privacy.sexy/)
+### Privacy & Optimization
 
-### Delete all native apps
+Use [Privacy.sexy](https://privacy.sexy/) to generate a cleanup script.
 
-```bash
+* **Recommendation:** Stick to the **Standard** ruleset for a balance of stability and privacy.
+
+### Delete Native Apps (Keep Microsoft Store)
+
+```powershell
 Get-AppxPackage | where-object {$_.name –notlike “*store*”} | Remove-AppxPackage
 ```
 
 
+## 🎨 Personalization & UI
 
-## Apps & Customization 🎨
+### Typography
 
-### Install Apps
+* **Font:** [Download Fira Code v6.2](https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip) (Monospaced font with programming ligatures).
 
-[Spinel](https://spinel.ovh)
+### Wallpapers
 
-### Download wallpaper
+* [W10 Wallpaper Dark Theme](https://github.com/Mateleo/W10clean/blob/main/wp5493583-windows-10-default-wallpapers.jpg)
 
-[W10 Wallpaper Dark Theme](/wp5493583-windows-10-default-wallpapers.jpg)
+### App Installation
 
+* Use [Spinel](https://spinel.ovh) for streamlined app deployment.
 
+---
 
-## Developer specific 👩‍💻
+## 👩‍💻 Developer Environment
 
-### Git config
+### Git Configuration
 
 ```bash
-git config --global user.name Username
-git config --global user.email my@email.com
+git config --global user.name "YourUsername"
+git config --global user.email "your@email.com"
 ```
 
+### Python: Fix Visual C++ Build Errors
 
+If you encounter `Microsoft Visual C++ 14.0 is required` during a pip install:
 
-## Python 🐍
-
-### [uv](https://github.com/astral-sh/uv)
-
-```bash
-# On macOS and Linux.
-curl -LsSf https://astral.sh/uv/install.sh | sh
-# On Windows.
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-### Pip error: Microsoft Visual C++ 14.0 is required
-
-_[source](https://hub.tcno.co/software/vs/buildtools/)_
-
-```bash
+```powershell
 choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.MSBuildTools;includeRecommended --add Microsoft.VisualStudio.Workload.VCTools;includeRecommended --quiet" -y
 ```
 
-## JavaScript 📦
+### JavaScript: Package Management
 
-### [pnpm](https://pnpm.io/)
+Enable **pnpm** via Node.js Corepack:
 
 ```bash
 corepack enable pnpm
